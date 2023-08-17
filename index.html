@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script
+      src="https://kit.fontawesome.com/276201f3ac.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>My Text Editor</title>
+    <style>
+      button:active{
+        background: grey;
+      }
+      
+    </style>
+  </head>
+  <body class="container mx-auto">
+    <main>
+      <div
+        class="w-[90%] mt-32 h-[500px] mx-auto bg-blue-400 rounded flex flex-col p-2"
+      >
+        <p class="font-bold text-4xl text-center">My Text Editor</p>
+
+        <div
+          class="rounded mx-auto bg-white border-none my-2 px-2 flex items-center justify-between w-[95%]"
+        >
+          <div class="flex gap-2">
+            <button
+              onclick="fontBold(this)"
+              id="bold"
+              class="active:bg-gray-300 rounded-sm w-5"
+            >
+              <i class="fa-solid fa-bold fa-sm" style="color: #21252c"></i>
+            </button>
+            <button
+              onclick="fonItalic(this)"
+              id="italic"
+              class="active:bg-gray-300 rounded-sm w-5"
+            >
+              <i class="fa-solid fa-italic fa-sm" style="color: #21252c"></i>
+            </button>
+            <button onclick="fontUnderline(this)" id="underline" class="active:bg-gray-300 rounded-sm w-5">
+              <i class="fa-solid fa-underline fa-sm" style="color: #21252c"></i>
+            </button>
+          </div>
+          <div class="flex gap-2">
+            <input
+              class="w-10 h-4 border border-solid border-gray-300  rounded"
+              type="number"
+              max="100"
+              min="10"
+              value="16"
+              id="font-size"
+              onchange="fontSizes(this)"
+            >
+            <input onchange="colorPicker(this)"
+              class="w-10 h-4 border-none outline-none bg-none"
+              type="color"
+              id="colorpicker"
+              value="#000000"
+            />
+          </div>
+          <div class="flex gap-2 p-1">
+            <button onclick="leftAlign(this)"
+              id="left"
+              onclick=""
+              class="hover:bg-gray-300 rounded-sm w-5"
+            >
+              <i class="fa-solid fa-align-left fa-sm"></i>
+            </button>
+            <button onclick="centerAlign(this)" id="center" class="hover:bg-gray-300 rounded-sm w-5">
+              <i class="fa-solid fa-align-center fa-sm"></i>
+            </button>
+            <button onclick="rightAlign(this)" id="right" class="hover:bg-gray-300 rounded-sm w-5">
+              <i class="fa-solid fa-align-right fa-sm"></i>
+            </button>
+          </div>
+        </div>
+
+        <textarea
+          class="mt-2 p-2 rounded mx-auto w-[95%] h-[350px] m-auto resize-y"
+          name=""
+          id="textarea"
+          placeholder="Write something here..."
+          
+        ></textarea>
+      </div>
+    </main>
+    <script src="./code.js"></script>
+  </body>
+</html>
