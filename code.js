@@ -63,3 +63,6 @@ function textSlash(e){
         } 
 }
  
+window.addEventListener('load'), ()=> {
+    textarea.value='';
+}
